@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=THRILL
+Comment=THRILL P2P Cryptocurrency
+Exec=thrill-qt %u
+Terminal=false
+Type=Application
+Icon=thrill128
+MimeType=x-scheme-handler/thrill;
+Categories=Office;Finance;
+Name[en_US]=thrill-qt.desktop.desktop

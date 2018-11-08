@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/thrill_bg.qm</file>
+        <file alias="de">locale/thrill_de.qm</file>
+        <file alias="en">locale/thrill_en.qm</file>
+        <file alias="es">locale/thrill_es.qm</file>
+        <file alias="fi">locale/thrill_fi.qm</file>
+        <file alias="fr">locale/thrill_fr.qm</file>
+        <file alias="it">locale/thrill_it.qm</file>
+        <file alias="ja">locale/thrill_ja.qm</file>
+        <file alias="pl">locale/thrill_pl.qm</file>
+        <file alias="pt">locale/thrill_pt.qm</file>
+        <file alias="ru">locale/thrill_ru.qm</file>
+        <file alias="sk">locale/thrill_sk.qm</file>
+        <file alias="sv">locale/thrill_sv.qm</file>
+        <file alias="vi">locale/thrill_vi.qm</file>
+        <file alias="zh_CN">locale/thrill_zh_CN.qm</file>
+        <file alias="zh_TW">locale/thrill_zh_TW.qm</file>
+    </qresource>
+</RCC>
