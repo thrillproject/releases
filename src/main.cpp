@@ -1278,7 +1278,7 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
 
 bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransaction& tx, bool fLimitFree, bool* pfMissingInputs, bool fRejectInsaneFee, bool isDSTX)
 {
-	 
+
     AssertLockHeld(cs_main);
     if (pfMissingInputs)
         *pfMissingInputs = false;
@@ -1666,23 +1666,23 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
 
 	// Variable Split
-	if (nHeight == 0 && nHeight > 0) {
+  if (nHeight == 0 && nHeight > 0) {
 	      ret = blockValue  / 100 * 0;
-    } else if (nHeight > 1400){
+    } else if (nHeight > 1400 && nHeight <= 4100) {
           ret = blockValue  / 100 * 90;
-    } else if (nHeight > 4100) {
+    } else if (nHeight > 4100 && nHeight <= 8600) {
           ret = blockValue  / 100 * 85;
-    } else if (nHeight > 8600) {
+    } else if (nHeight > 8600 && nHeight <= 20000) {
           ret = blockValue  / 100 * 75;
-    } else if (nHeight > 20000) {
+    } else if (nHeight > 20000 && nHeight <= 50000) {
           ret = blockValue  / 100 * 70;
-    } else if (nHeight > 50000) {
+    } else if (nHeight > 50000 && nHeight <= 150000) {
           ret = blockValue  / 100 * 75;
-    } else if (nHeight > 150000) {
+    } else if (nHeight > 150000 && nHeight <= 350000) {
 		  ret = blockValue  / 100 * 80;
-    } else if (nHeight > 350000) {
+    } else if (nHeight > 350000 && nHeight <= 700000) {
 		  ret = blockValue  / 100 * 85;
-	} else if (nHeight > 700000) {
+    } else if (nHeight > 700000) {
 		  ret = blockValue  / 100 * 90;
 	} else {
   		  ret = blockValue  / 100 * 0;
@@ -3305,7 +3305,7 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
         }
 
 	//Script expect = CScript() << nHeight;
-	 
+
     // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
     // if 750 of the last 1,000 blocks are version 2 or greater (51/100 if testnet):
     if (block.nVersion >= 2 &&
@@ -3576,7 +3576,7 @@ bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex
         return false;
     if (!CheckBlock(block, state, fCheckPOW, fCheckMerkleRoot))
         return false;
-	
+
 	if( pindexPrev->nHeight +1 > Params().LAST_POW_BLOCK()){
     if (!ContextualCheckBlock(block, state, pindexPrev))
         return false;
